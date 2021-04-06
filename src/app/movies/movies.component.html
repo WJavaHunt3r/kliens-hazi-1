@@ -1,1 +1,33 @@
-<p>movie works!</p>
+<main class="container">
+    <div class="card px-3 m-4 d-flex justify-content-center ">
+        <section class="card-header d-flex justify-content-between my-2">
+            <h1>Movies</h1>
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="cardView" >
+                <label ngbButtonLabel class="btn btn-outline-dark" style="padding-top: 13px;">
+                    <i class="bi bi-grid-fill " >
+                        <input  ngbButton type="radio" [value]="true">
+                    </i>
+                </label>
+                <label ngbButtonLabel class="btn btn-outline-dark"  style="padding-top: 13px;">
+                    <i class=" bi bi-list">
+                        <input ngbButton type="radio" [value]="false">
+                    </i>
+                </label>
+
+            </div>
+        </section>
+        <div class="row view-group">
+            <div *ngFor="let movie of movies, index as i" class= "item my-2 col-xs-12 col-md-4 col-lg-3" [ngClass]=" cardView ? 'grid-group-item' : 'list-group-item'">
+                <div class="card">
+                    <div *ngIf="cardView" class="img-event">
+                        <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
+                    </div>
+                    <div class=" caption card-body " [ngClass]=" cardView ? 'd-flex align-items-center justify-content-center' : ''">
+                        <h4 class="group card-title inner list-group-item-heading ">
+                            {{movie.title}}</h4>                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
