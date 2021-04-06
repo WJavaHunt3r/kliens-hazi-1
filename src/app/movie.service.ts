@@ -20,7 +20,7 @@ export class MovieService {
     return this.http.get<Movie[]>(`${MovieService.baseUrl}`);
   }
 
-  getMovie(movieId: number){
+  getMovie(movieId: string){
     return this.http.get<Movie>(`${MovieService.baseUrl}/${movieId}`);
   }
 
@@ -29,7 +29,7 @@ export class MovieService {
   }
 
   postMovie(movie: Movie){
-    return this.http.put<Movie>(`${MovieService.baseUrl}`, movie, this.httpOptions);
+    return this.http.post<Movie>(`${MovieService.baseUrl}`, movie, this.httpOptions);
   }
 
   deleteMovie(movieId: number){
