@@ -1,0 +1,1 @@
+export type Genre = 'Romance' | 'Comedy' | 'Drama' | 'Action' | 'Fantasy' | 'Horror' | 'Thriller' | 'Animation' | 'Other'
