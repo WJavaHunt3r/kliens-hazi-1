@@ -15,7 +15,7 @@ export class AddUpdateComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.updating = false;
+    this.updating = true;
   }
 
   update(){

@@ -23,7 +23,7 @@
                     <input [(ngModel)]="length" name="length" type="number" class="form-control form-control-lg text-center"
                          required>
                 </div>
-                <button type="submit" class="btn btn-block btn-primary">Start new game</button>
+                <button type="submit" class="btn btn-block btn-primary">{{updating ? 'Update movie' : 'Add new movie'}}</button>
             </div>
         </div>
     </div>

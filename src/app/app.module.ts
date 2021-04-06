@@ -9,12 +9,14 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { FormsModule } from '@angular/forms';
 import { AddUpdateComponent } from './add-update/add-update.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     AddUpdateComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
