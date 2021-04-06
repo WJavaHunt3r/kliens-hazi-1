@@ -1,1 +1,20 @@
-<p>movie works!</p>
+<main class="container-fluid">
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="cardView">
+        <label ngbButtonLabel class="btn-primary">
+            <i ngbButtonLabel class="bi bi-grid-fill">
+            <input ngbButton type="radio" [value]="true">
+            </i>
+        </label>
+		<label ngbButtonLabel class="btn-primary">
+            <i ngbButtonLabel class="bi bi-list">
+                <input ngbButton type="radio" [value]="false">
+            </i>
+        </label>
+	</div>
+    <div class="row mt-2">
+        <div *ngFor="let movie of movies, index as i" [ngClass]="cardView ? 'col-3' : 'col-12'">
+                <div type="button" class="my-2" style="border: 1px solid;">{{movie.title}}
+                </div>
+        </div>
+</div>
+</main>

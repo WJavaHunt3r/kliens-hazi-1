@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie';
+import { MovieService } from '../movie.service';
 
 @Component({
-  selector: 'mm-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.scss']
+  selector: 'mm-movies',
+  templateUrl: './movies.component.html',
+  styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-
-  constructor() { }
+  movies: Movie[];
+  cardView: boolean;
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.cardView = false;
+    this.getMovies()
   }
 
+  getMovies(){
+    this.movieService.getMovies().subscribe(movies => {
+      console.log(movies);
+      this.movies = movies;
+    });
+  }
 }
