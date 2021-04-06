@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { FormsModule } from '@angular/forms';
+import { AddUpdateComponent } from './add-update/add-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
+    AddUpdateComponent,
   ],
   imports: [
     BrowserModule,

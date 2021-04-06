@@ -1,0 +1,30 @@
+<form (submit)="updating ? update() : addMovie()" class=" row text-center col m-auto">
+    <div class="card">
+        <h1 class="card-title m-5">{{updating ? 'Update movie' : 'New movie'}}</h1>
+        <div class="card-body">
+            <div class="card-text">
+                <div class="input-group my-5">
+                    <label class="form-control-lg">Title:</label><br>
+                    <input [(ngModel)]="title" name="title" type="string" class="form-control form-control-lg text-center"
+                         required>
+                </div>
+                <div class="input-group my-5">
+                    <label class="form-control-lg">Release date</label><br>
+                    <input [(ngModel)]="release_date" name="release_date" type="number" class="form-control form-control-lg text-center"
+                     required>
+                </div>
+                <div class="input-group my-5" >
+                    <label class="form-control-lg">Genre</label><br>
+                    <input [(ngModel)]="genre" name="genre" type="string" class="form-control form-control-lg text-center"
+                         required>
+                </div>
+                <div class="input-group my-5" >
+                    <label class="form-control-lg">Length</label><br>
+                    <input [(ngModel)]="length" name="length" type="number" class="form-control form-control-lg text-center"
+                         required>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">Start new game</button>
+            </div>
+        </div>
+    </div>
+</form>
