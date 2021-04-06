@@ -10,6 +10,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { FormsModule } from '@angular/forms';
 import { AddUpdateComponent } from './add-update/add-update.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,14 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
   imports: [
     BrowserModule,
     NgbModule,
+    RouterModule.forRoot([ 
+      { path: 'movies/new', component: AddUpdateComponent }, 
+      { path: 'movies/:movieId', component: MovieDetailComponent},
+      { path: 'movies', component: MoviesComponent },
+           
+      {path: 'movies/:movieId/edit', component: AddUpdateComponent },
+      {path: '', redirectTo: 'movies', pathMatch: 'full'},
+    ]),
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
