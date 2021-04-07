@@ -1,0 +1,8 @@
+<div class="text-center m-4" >
+    <h1 >Are you sure you want to delete "{{this.movie.title}}" from the database?</h1>    
+
+    <div class="btn-group mt-2">
+        <button class="btn btn-outline-primary " (click)="cancel.emit()">Cancel</button>
+        <button class="btn btn-danger" (click)="ok.emit()">Delete</button>
+    </div>
+</div>

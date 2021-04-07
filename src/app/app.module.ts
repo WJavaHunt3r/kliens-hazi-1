@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AddUpdateComponent } from './add-update/add-update.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { RouterModule } from '@angular/router';
+import { DeleteMovieComponent } from './delete-movie/delete-movie.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     MoviesComponent,
     AddUpdateComponent,
     MovieDetailComponent,
+    DeleteMovieComponent,
   ],
   imports: [
     BrowserModule,

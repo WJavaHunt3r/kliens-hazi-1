@@ -6,4 +6,5 @@ export interface Movie{
     release_date: number;
     genre: Genre;
     length: number;
+    thumbnail?: string;
 }
