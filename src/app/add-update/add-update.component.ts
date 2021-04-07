@@ -17,6 +17,7 @@ export class AddUpdateComponent implements OnInit {
   length: number;
   movieId: string;
   movie: Movie;
+  thumbnail: string;
   genres: Genre[] = ['Romance' , 'Comedy' , 'Drama' , 'Action' , 'Fantasy' , 'Horror' , 'Thriller' , 'Animation' , 'Other'];
   constructor(private movieService: MovieService,private route: ActivatedRoute,
     private router: Router,) { }
@@ -33,6 +34,7 @@ export class AddUpdateComponent implements OnInit {
         this.title = movie.title;
         this.genre = movie.genre;
         this.length = movie.length;
+        this.thumbnail = movie.thumbnail;
         this.release_date = movie.release_date;
       })
     }
@@ -44,7 +46,9 @@ export class AddUpdateComponent implements OnInit {
     this.movie.genre = this.genre;
     this.movie.length = this.length;
     this.movie.release_date = this.release_date;
+    this.movie.thumbnail = this.thumbnail;
     this.movieService.updateMovie(this.movie).subscribe(movie =>{
+      
       this.router.navigateByUrl("");
     })
   }
@@ -53,7 +57,8 @@ export class AddUpdateComponent implements OnInit {
     this.movie = {title: this.title,
                   genre : this.genre,
                   length : this.length,
-                  release_date : this.release_date}
+                  release_date : this.release_date,
+                  thumbnail: this.thumbnail ? this.thumbnail : 'http://placehold.it/1500x2000/000/fff'}
     this.movieService.postMovie(this.movie).subscribe(movie =>{
       console.log(movie);
       this.router.navigateByUrl("movies");

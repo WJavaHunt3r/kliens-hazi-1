@@ -27,6 +27,11 @@
                     <input [(ngModel)]="length" name="length" type="number" class="form-control form-control-lg text-center"
                         value="length" required>
                 </div>
+                <div class="input-group my-5" >
+                    <label class="form-control-lg">Thumbnail link</label><br>
+                    <input [(ngModel)]="thumbnail" name="thumbnail" type="thumbnail" class="form-control form-control-lg text-center"
+                        value="length">
+                </div>
                 <button type="submit" class="btn btn-primary px-5 btn-lg" [disabled]="form.invalid">{{updating ? 'Update movie' : 'Add new movie'}}</button>
 
             </div>

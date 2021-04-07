@@ -1,3 +1,4 @@
+$badgeColors: (green,red, yellow, blue, grey, orange, darkblue, black, darkgreen);
 .view-group {
     display: -ms-flexbox;
     display: flex;
@@ -59,9 +60,10 @@
 .item.list-group-item .caption
 {
     float: left;
-    width: 90%;
+    width: 100%;
     margin: 0;
     padding-left: 10px ;
+    padding-right: 10px;
 }
 
 .item.list-group-item .group
@@ -79,3 +81,23 @@
 {
     clear: both;
 }
+.badge{
+    float:right;
+}
+@mixin bg-color($index) {
+    .badge.badge-bg-#{$index}{
+        background: nth($badgeColors, $index);
+        @if $index == 3{
+            color:black;
+        }
+        @else {
+            color:white;
+        }
+    }
+}
+    
+
+@for $index from 1 to length($badgeColors)+1  {
+    @include bg-color($index);
+}
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Genre } from '../models/genre';
 import { Movie } from '../models/movie';
 import { MovieService } from '../movie.service';
 
@@ -11,6 +12,7 @@ import { MovieService } from '../movie.service';
 export class MoviesComponent implements OnInit {
   movies: Movie[];
   cardView: boolean;
+  genres: Genre[] = ['Romance' , 'Comedy' , 'Drama' , 'Action' , 'Fantasy' , 'Horror' , 'Thriller' , 'Animation' , 'Other'];
   constructor(private movieService: MovieService,private route: ActivatedRoute,
     private router: Router,) { }
 
