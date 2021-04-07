@@ -1,26 +1,33 @@
-<main *ngIf="isDataLoaded" class="container">
-    <div class="card mb-3" >
-        <div class="row ">
-          <div class="col-md-8">
-            <img src="http://placehold.it/400x250/000/fff" alt="...">
-          </div>
-          <div class="col-md-4">
-            <div class="card-body">
-                <p class="card-text">Title: {{movie.title}}</p>
-                <p class="card-text">Release Date: {{movie.release_date}}</p>
-                <p class="card-text">Genre: {{movie.genre}}</p>
-                <p class="card-text">Length: {{movie.length}} min</p>
-            </div>
-            <div class="btn-group d-flex justify-content-center m-2" style="max-width: 200px;">
-                <button class="btn btn-outline-primary" (click)="editMovie()">
-                    <i class="bi bi-pencil-square " ></i>
-                </button>
-                <button class="btn btn-outline-danger" (click)="deleteMovie()">
-                    <i class=" bi bi-trash"></i>
-                </button>
-
-            </div>
-          </div>
+<main *ngIf="isDataLoaded" class="container d-flex justify-content-center ">
+    <div class="card pb-3" >
+        <div class="card-header  d-flex justify-content-center">
+            <h4 class="card-title font-weight-bold" >{{movie.title}}</h4>            
         </div>
+        <div class="view overlay d-flex justify-content-center p-2">
+              <img class="img" src="http://placehold.it/400x250/000/fff" alt="...">
+          </div>
+
+            <div class="card-body d-flex justify-content-center">
+              <div class="col-6">
+                <p class="card-text font-weight-bold">Release Date: </p>
+                <p class="card-text font-weight-bold">Genre: </p>
+                <p class="card-text font-weight-bold">Length: </p>
+              </div>
+              <div class="col-6">
+                <p class="card-text ">{{movie.release_date}}</p>
+                <p class="card-text ">{{movie.genre}}</p>
+                <p class="card-text ">{{movie.length}} min</p>
+              </div>
+            </div>
+            
+            <div class="btn-group px-5" >
+              <button class="btn btn-outline-primary" (click)="editMovie()">
+                  <i class="bi bi-pencil-square " ></i>
+              </button>
+              <button class="btn btn-outline-danger" (click)="deleteMovie()">
+                  <i class=" bi bi-trash"></i>
+              </button>
+          </div>
+
       </div>
 </main>

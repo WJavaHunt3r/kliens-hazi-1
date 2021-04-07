@@ -17,6 +17,7 @@ export class AddUpdateComponent implements OnInit {
   length: number;
   movieId: string;
   movie: Movie;
+  genres: Genre[] = ['Romance' , 'Comedy' , 'Drama' , 'Action' , 'Fantasy' , 'Horror' , 'Thriller' , 'Animation' , 'Other'];
   constructor(private movieService: MovieService,private route: ActivatedRoute,
     private router: Router,) { }
 
