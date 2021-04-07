@@ -1,5 +1,6 @@
-<form #form="ngForm" (submit)="updating ? update() : addMovie()" class=" row text-center col m-auto">
-    <div class="card">
+
+<form #form="ngForm" (submit)="updating ? update() : addMovie()" class="container text-center  px-3 m-3 d-flex justify-content-center col">
+    <div class="card ">
         <h1 class="card-title m-5">{{updating ? 'Update movie' : 'New movie'}}</h1>
         <div class="card-body">
             <div class="card-text">

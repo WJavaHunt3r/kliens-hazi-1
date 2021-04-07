@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteMovieComponent } from '../delete-movie/delete-movie.component';
 import { Movie } from '../models/movie';
 import { MovieService } from '../movie.service';
 
@@ -13,7 +15,8 @@ export class MovieDetailComponent implements OnInit {
   movieId: string;
   isDataLoaded: boolean = false;
   constructor(private movieService: MovieService,private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private modalService: NgbModal) { }
 
   ngOnInit(): void {
     const params = this.route.snapshot.paramMap;
@@ -29,9 +32,21 @@ export class MovieDetailComponent implements OnInit {
   }
 
   deleteMovie(){
-    this.movieService.deleteMovie(this.movie.id).subscribe(message => {
-    });
-    this.router.navigateByUrl(`movies`);
+    let modal = this.modalService.open(DeleteMovieComponent, { backdrop: 'static', centered: true });
+  (modal.componentInstance as DeleteMovieComponent).initParameters({
+    movie: this.movie
+  }, {
+    cancel: () => {
+      modal.close();
+    },
+    ok: () => {
+      this.movieService.deleteMovie(this.movie.id).subscribe(message => {
+      });
+      modal.close();
+      this.router.navigateByUrl(`movies`);
+    }
+  });
+    
 
   }
 
