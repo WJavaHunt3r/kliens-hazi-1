@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService{
   constructor() { }
   createDb() {
     const movies = [
-      {id:11, title: 'Titanic', release_date: 1997, genre: 'Romance', length: 210, thumbnail: 'https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UY1200_CR88,0,630,1200_AL_.jpg' },
+      {id:11, title: 'Titanic', release_date: 1997, genre: 'Romance', length: 210, thumbnail: 'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298' },
       {id:12, title: 'The Dark night', release_date: 2008, genre: 'Action', length: 152, thumbnail: 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg' },
       {id:13, title: 'The Lord of the Rings: The Return of the King', release_date: 2003, genre: 'Action', length: 201, thumbnail: 'http://www.limitedruns.com/media/cache/7e/6b/7e6b6743a7e45d096838abd67b2464e2.jpg' },
       {id:14, title: 'Forrest Gump', release_date: 1994, genre: 'Drama', length: 142,thumbnail: 'https://www.citatum.hu/kepek/filmek/nagy/forrest_gump.jpg' },

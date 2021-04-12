@@ -1,5 +1,5 @@
 <main class="container">
-    <div class="card m-4 d-flex justify-content-center ">
+    <div class="card m-4 d-flex justify-content-center bg-light">
         <section class="card-header d-flex justify-content-between">
             <h1>Movies</h1>
             <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="cardView" >
@@ -9,7 +9,7 @@
                     </i>
                 </label>
                 <label ngbButtonLabel class="btn btn-outline-dark"  style="padding-top: 13px;">
-                    <i class=" bi bi-list">
+                    <i class=" bi bi-list-task">
                         <input ngbButton type="radio" [value]="false">
                     </i>
                 </label>
@@ -18,9 +18,9 @@
                 </button>
             </div>
         </section>
-        <div class="row view-group px-3">
-            <div (click)="onClick(i)" *ngFor="let movie of movies, index as i" class= "item my-2 col-xs-12 col-md-4 col-lg-3" [ngClass]=" cardView ? 'grid-group-item' : 'list-group-item'">
-                <div class="card">
+        <div class="row view-group px-3 mx-0 bg-dark">
+            <div (click)="onClick(i)" *ngFor="let movie of movies, index as i" class= "item my-2 col-xs-12 col-md-4 col-lg-3" [ngClass]=" cardView ? 'grid-group-item' : 'list-group-item bg-dark'">
+                <div class="card bg-light w-100 hover-shadow">
                     <div *ngIf="cardView" class="img-event">
                         <img class="group list-group-image img-fluid" src={{movie.thumbnail}} alt="" />
                     </div>

@@ -47,9 +47,9 @@ export class AddUpdateComponent implements OnInit {
     this.movie.length = this.length;
     this.movie.release_date = this.release_date;
     this.movie.thumbnail = this.thumbnail;
-    this.movieService.updateMovie(this.movie).subscribe(movie =>{
+    this.movieService.updateMovie(this.movie).subscribe(() =>{
       
-      this.router.navigateByUrl("");
+      this.router.navigateByUrl(`movies/${this.movie.id}`);
     })
   }
 
@@ -60,7 +60,6 @@ export class AddUpdateComponent implements OnInit {
                   release_date : this.release_date,
                   thumbnail: this.thumbnail ? this.thumbnail : 'http://placehold.it/1500x2000/000/fff'}
     this.movieService.postMovie(this.movie).subscribe(movie =>{
-      console.log(movie);
       this.router.navigateByUrl("movies");
     })
   }
